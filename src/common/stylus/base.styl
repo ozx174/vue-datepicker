@@ -1,0 +1,100 @@
+@media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
+  .border-1px
+    &::after
+      -webkit-transform: scaleY(0.7)
+      transform: scaleY(0.7)
+
+@media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+  .border-1px
+    &::after
+      -webkit-transform: scaleY(0.5)
+      transform: scaleY(0.5)
+
+@media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+  .border-1px
+    &::after
+      -webkit-transform: scaleY(0.3)
+      transform: scaleY(0.3)
+
+.clearfix
+  display: inline-block
+  &:after
+    content: ''
+    display: block
+    height: 0
+    line-height: 0
+    clear: both
+    visibility: hidden
+
+.fade-enter-active, .fade-leave-active
+  transition: all 250ms ease
+
+.fade-enter, .fade-leave-active
+  opacity: 0!important
+
+.popup-slide-enter-active, .popup-slide-leave-active {
+  transition: all 250ms;
+}
+.popup-slide-enter, .popup-slide-leave-active {
+  opacity: 0;
+  transform: translate3d(0, 0.8rem, 0);
+}
+
+.slide-up-enter-active, .slide-up-leave-active {
+  transition: all 500ms;
+}
+.slide-up-enter, .slide-up-leave-active {
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+}
+
+
+
+.slide-left-enter-active, .slide-left-leave-active
+  transition: all 0.35s ease
+
+.slide-left-enter, .slide-left-leave-active
+  transform: translate3d(100%, 0, 0);
+
+/*场景切换*/
+.prev-enter-active,
+.prev-leave-active,
+.next-enter-active,
+.next-leave-active {
+  will-change: transform;
+  transition: all 500ms;
+  position: absolute;
+}
+.prev-enter {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+.prev-leave-active {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+.next-enter {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+.next-leave-active {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.p-bottom-dashed:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 1px dashed #6F7B85;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  pointer-events none
+}
